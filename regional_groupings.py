@@ -188,8 +188,7 @@ from matplotlib.colors import LinearSegmentedColormap
 
 # Present Day Simulations
 # Path to NetCDF file
-sim_v1 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.2-RESICOAL0.2-WOOD10-OIL38.cam.h1.2009-2011_PD.nc"
-# Open the NetCDF file
+sim_v1 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.2-RESICOAL0.2-WOOD10-OIL38_2009-2011_DEPMEAN.nc"
 model_data = Dataset(sim_v1)
 
 # Extract the required variables
@@ -197,83 +196,83 @@ all_long_options = model_data.variables['lon'][:]
 all_lat_options = model_data.variables['lat'][:]
 wet_dep_v1 = model_data.variables['FESOLWET'][:]
 dry_dep_v1 = model_data.variables['FESOLDRY'][:]
-tot_dep_median_v1 = np.median(tot_dep_v1, axis=0)
 tot_dep_v1 = dry_dep_v1 + wet_dep_v1
+tot_dep_mean_v1 = np.mean(tot_dep_v1, axis=0)
 
 model_data.close()
 
 # v2
-sim_v2 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.2-RESICOAL33-WOOD10-OIL38.cam.h1.2009-2011_PD.nc"
+sim_v2 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.2-RESICOAL33-WOOD56-OIL38_2009-2011_DEPMEAN.nc"
 model_data_v2 = Dataset(sim_v2)
 wet_dep_v2 = model_data_v2.variables['FESOLWET'][:]
 dry_dep_v2 = model_data_v2.variables['FESOLDRY'][:]
 tot_dep_v2 = dry_dep_v2 + wet_dep_v2
-tot_dep_median_v2 = np.median(tot_dep_v2, axis=0)
+tot_dep_mean_v2 = np.mean(tot_dep_v2, axis=0)
 model_data_v2.close()
 
 # v3
-sim_v3 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.2-RESICOAL33-WOOD56-OIL38.cam.h1.2009-2011_PD.nc"
+sim_v3 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.2-RESICOAL33-WOOD10-OIL38_2009-2011_DEPMEAN.nc"
 model_data_v3 = Dataset(sim_v3)
 wet_dep_v3 = model_data_v3.variables['FESOLWET'][:]
 dry_dep_v3 = model_data_v3.variables['FESOLDRY'][:]
 tot_dep_v3 = dry_dep_v3 + wet_dep_v3
-tot_dep_median_v3 = np.median(tot_dep_v3, axis=0)
+tot_dep_mean_v3 = np.mean(tot_dep_v3, axis=0)
 model_data_v3.close()
 
 # v4
-sim_v4 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.05-RESICOAL33-WOOD56-OIL25.cam.h1.2009-2011_PD.nc"
+sim_v4 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.05-RESICOAL33-WOOD56-OIL25_2009-2011_DEPMEAN.nc"
 model_data_v4 = Dataset(sim_v4)
 wet_dep_v4 = model_data_v4.variables['FESOLWET'][:]
 dry_dep_v4 = model_data_v4.variables['FESOLDRY'][:]
 tot_dep_v4 = dry_dep_v4 + wet_dep_v4
-tot_dep_median_v4 = np.median(tot_dep_v4, axis=0)
+tot_dep_mean_v4 = np.mean(tot_dep_v4, axis=0)
 model_data_v4.close()
 
 # v5
-sim_v5 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.05-RESICOAL33-WOOD56-OIL25-FIREFINE56.cam.h1.2009-2011_PD.nc"
-model_data_v5 = Dataset(sim_v5)
-wet_dep_v5 = model_data_v5.variables['FESOLWET'][:]
-dry_dep_v5 = model_data_v5.variables['FESOLDRY'][:]
-tot_dep_v5 = dry_dep_v5 + wet_dep_v5
-tot_dep_median_v5 = np.median(tot_dep_v5, axis=0)
-model_data_v5.close()
+#sim_v5 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.05-RESICOAL33-WOOD56-OIL25-FIREFINE56.cam.h1.2009-2011_PD.nc"
+#model_data_v5 = Dataset(sim_v5)
+#wet_dep_v5 = model_data_v5.variables['FESOLWET'][:]
+#dry_dep_v5 = model_data_v5.variables['FESOLDRY'][:]
+#tot_dep_v5 = dry_dep_v5 + wet_dep_v5
+#tot_dep_mean_v5 = np.mean(tot_dep_v5, axis=0)
+#model_data_v5.close()
 
 # Preindustrial simulations
 # v6
-sim_v6 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI-PI-RESICOAL0.2-FIRE33.cam.h1.2009-2011_PI.nc"
+sim_v6 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI-PI-RESICOAL0.2_FINEFIRE33_v2.cam.h1.2009-2011_fire_x2.nc"
 model_data_v6 = Dataset(sim_v6)
 wet_dep_v6 = model_data_v6.variables['FESOLWET'][:]
 dry_dep_v6 = model_data_v6.variables['FESOLDRY'][:]
 tot_dep_v6 = dry_dep_v6 + wet_dep_v6
-tot_dep_median_v6 = np.median(tot_dep_v6, axis=0)
+tot_dep_mean_v6 = np.mean(tot_dep_v6, axis=0)
 model_data_v6.close()
 
 # v7
-sim_v7 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI-PI-RESICOAL0.2-FIRE56.cam.h1.2009-2011_PI.nc"
+sim_v7 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI-PI-RESICOAL33_FINEFIRE33_v2.cam.h1.2009-2011_fire_x2.nc"
 model_data_v7 = Dataset(sim_v7)
 wet_dep_v7 = model_data_v7.variables['FESOLWET'][:]
 dry_dep_v7 = model_data_v7.variables['FESOLDRY'][:]
 tot_dep_v7 = dry_dep_v7 + wet_dep_v7
-tot_dep_median_v7 = np.median(tot_dep_v7, axis=0)
+tot_dep_mean_v7 = np.mean(tot_dep_v7, axis=0)
 model_data_v7.close()
 
 # v8
-sim_v8 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI-PI-RESICOAL33-FIRE33.cam.h1.2009-2011_PI.nc"
-model_data_v8 = Dataset(sim_v8)
-wet_dep_v8 = model_data_v8.variables['FESOLWET'][:]
-dry_dep_v8 = model_data_v8.variables['FESOLDRY'][:]
-tot_dep_v8 = dry_dep_v8 + wet_dep_v8
-tot_dep_median_v8 = np.median(tot_dep_v8, axis=0)
-model_data_v8.close()
+#sim_v8 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI-PI-RESICOAL33-FIRE33.cam.h1.2009-2011_PI.nc"
+#model_data_v8 = Dataset(sim_v8)
+#wet_dep_v8 = model_data_v8.variables['FESOLWET'][:]
+#dry_dep_v8 = model_data_v8.variables['FESOLDRY'][:]
+#tot_dep_v8 = dry_dep_v8 + wet_dep_v8
+#tot_dep_mean_v8 = np.mean(tot_dep_v8, axis=0)
+#model_data_v8.close()
 
 # determining percent changes for each simulation from base
-a_percent_change_MIMI_v2 = (tot_dep_median_v2-tot_dep_median_v1)/tot_dep_median_v1 # see change in resi coal
-b_percent_change_v2_v3 = (tot_dep_median_v3-tot_dep_median_v2)/tot_dep_median_v2 # see change in wood
-c_percent_change_MIMI_v3 = (tot_dep_median_v3-tot_dep_median_v1)/tot_dep_median_v1 # see change in wood + resicoal
-d_percent_change_v3_v4 = (tot_dep_median_v4-tot_dep_median_v3)/tot_dep_median_v3 # see change in oil/indcoal
-e_percent_change_MIMI_v4 = (tot_dep_median_v4-tot_dep_median_v1)/tot_dep_median_v1 # see change in wood + resicoal + oil/indcoal
-f_percent_change_v4_v5 = (tot_dep_median_v5-tot_dep_median_v4)/tot_dep_median_v4 # see change in finefire
-g_percent_change_MIMI_v5 = (tot_dep_median_v5-tot_dep_median_v1)/tot_dep_median_v1 # see change in wood + resicoal + oil/indcoal + finefire
+a_percent_change_MIMI_v2 = (tot_dep_mean_v2-tot_dep_mean_v1)/tot_dep_mean_v1 # see change in resi coal
+b_percent_change_v2_v3 = (tot_dep_mean_v3-tot_dep_mean_v2)/tot_dep_mean_v2 # see change in wood
+c_percent_change_MIMI_v3 = (tot_dep_mean_v3-tot_dep_mean_v1)/tot_dep_mean_v1 # see change in wood + resicoal
+d_percent_change_v3_v4 = (tot_dep_mean_v4-tot_dep_mean_v3)/tot_dep_mean_v3 # see change in oil/indcoal
+e_percent_change_MIMI_v4 = (tot_dep_mean_v4-tot_dep_mean_v1)/tot_dep_mean_v1 # see change in wood + resicoal + oil/indcoal
+#f_percent_change_v4_v5 = (tot_dep_mean_v5-tot_dep_mean_v4)/tot_dep_mean_v4 # see change in finefire
+#g_percent_change_MIMI_v5 = (tot_dep_mean_v5-tot_dep_mean_v1)/tot_dep_mean_v1 # see change in wood + resicoal + oil/indcoal + finefire
 
 # Define your custom color map
 color1 = '#3E5DC6'
@@ -321,5 +320,145 @@ plot_figure(b_percent_change_v2_v3, "b_percent_change_v2_v3")
 plot_figure(c_percent_change_MIMI_v3, "c_percent_change_MIMI_v3")
 plot_figure(d_percent_change_v3_v4, "d_percent_change_v3_v4")
 plot_figure(e_percent_change_MIMI_v4, "e_percent_change_MIMI_v4")
-plot_figure(f_percent_change_v4_v5, "f_percent_change_v4_v5")
-plot_figure(g_percent_change_MIMI_v5, "g_percent_change_MIMI_v5")
+#plot_figure(f_percent_change_v4_v5, "f_percent_change_v4_v5")
+#plot_figure(g_percent_change_MIMI_v5, "g_percent_change_MIMI_v5")
+
+
+# %%
+# THIS IS JUST SRF CONCENTRATION OF IRON NOT DEPOSITION FLUXES 
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
+from netCDF4 import Dataset
+from matplotlib.colors import LinearSegmentedColormap
+
+# Present Day Simulations
+# Path to NetCDF file
+sim_v1 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.2-RESICOAL0.2-WOOD10-OIL38_2009-2011MEAN.nc"
+# Open the NetCDF file
+model_data = Dataset(sim_v1)
+# Extract the required variables
+all_long_options = model_data.variables['lon'][:]
+all_lat_options = model_data.variables['lat'][:]
+tot_v1 = model_data.variables['FETOTSRF'][:]
+sol_v1 = model_data.variables['FESOLSRF'][:]
+tot_mean_v1 = np.mean(tot_v1, axis=0)
+sol_mean_v1 = np.mean(sol_v1, axis=0)
+model_data.close()
+
+# v2 -- this is resicoal 33, wood10 despite mixup with naming convention
+sim_v2 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.2-RESICOAL33-WOOD56-OIL38_2009-2011MEAN.nc"
+model_data_v2 = Dataset(sim_v2)
+tot_v2 = model_data.variables['FETOTSRF'][:]
+sol_v2 = model_data.variables['FESOLSRF'][:]
+tot_mean_v2 = np.mean(tot_v2, axis=0)
+sol_mean_v2 = np.mean(sol_v2, axis=0)
+model_data_v2.close()
+
+# v3 -- this is resicoal 33, wood56 
+sim_v3 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.2-RESICOAL33-WOOD10-OIL38_2009-2011MEAN.nc"
+model_data_v3 = Dataset(sim_v3)
+tot_v3 = model_data.variables['FETOTSRF'][:]
+sol_v3 = model_data.variables['FESOLSRF'][:]
+tot_mean_v3 = np.mean(tot_v3, axis=0)
+sol_mean_v3 = np.mean(sol_v3, axis=0)
+model_data_v3.close()
+
+# v4
+sim_v4 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\data\\CAM6-MIMI_2010CLIMO_INDCOAL0.5-RESICOAL33-WOOD56-OIL25_2009-2011MEAN.nc"
+model_data_v4 = Dataset(sim_v4)
+tot_v4 = model_data.variables['FETOTSRF'][:]
+sol_v4 = model_data.variables['FESOLSRF'][:]
+tot_mean_v4 = np.mean(tot_v4, axis=0)
+sol_mean_v4 = np.mean(sol_v4, axis=0)
+model_data_v4.close()
+
+# v5
+
+# Preindustrial simulations
+# v6
+sim_v6 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI-PI-RESICOAL0.2-FIRE33.cam.h1.2009-2011_fire_x2.nc"
+model_data_v6 = Dataset(sim_v6)
+tot_v6 = model_data.variables['FETOTSRF'][:]
+sol_v6 = model_data.variables['FESOLSRF'][:]
+tot_mean_v6 = np.mean(tot_v6, axis=0)
+sol_mean_v6 = np.mean(sol_v6, axis=0)
+model_data_v6.close()
+
+# v7
+sim_v7 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI-PI-RESICOAL33-FIRE33.cam.h1.2009-2011_fire_x2.nc"
+model_data_v7 = Dataset(sim_v7)
+tot_v7 = model_data.variables['FETOTSRF'][:]
+sol_v7 = model_data.variables['FESOLSRF'][:]
+tot_mean_v7 = np.mean(tot_v7, axis=0)
+sol_mean_v7 = np.mean(sol_v7, axis=0)
+model_data_v7.close()
+
+# v8
+sim_v8 = "C:\\Users\\heplaas\\OneDrive - North Carolina State University\\Collaborations\\Coal Fly Ash\\data\\CAM6-MIMI-PI-RESICOAL33-FIRE56.cam.h1.2009-2011_fire_x2.nc"
+model_data_v8 = Dataset(sim_v8)
+tot_v8 = model_data.variables['FETOTSRF'][:]
+sol_v8 = model_data.variables['FESOLSRF'][:]
+tot_mean_v8 = np.mean(tot_v8, axis=0)
+sol_mean_v8 = np.mean(sol_v8, axis=0)
+model_data_v8.close()
+
+# determining percent changes for each simulation from base
+a_percent_change_MIMI_v2 = (tot_mean_v2-tot_mean_v1)/tot_mean_v1 # see change in resi coal
+b_percent_change_v2_v3 = (tot_mean_v3-tot_mean_v2)/tot_mean_v2 # see change in wood
+c_percent_change_MIMI_v3 = (tot_mean_v3-tot_mean_v1)/tot_mean_v1 # see change in wood + resicoal
+d_percent_change_v3_v4 = (tot_mean_v4-tot_mean_v3)/tot_mean_v3 # see change in oil/indcoal
+e_percent_change_MIMI_v4 = (tot_mean_v4-tot_mean_v1)/tot_mean_v1 # see change in wood + resicoal + oil/indcoal
+#f_percent_change_v4_v5 = (tot_mean_v5-tot_mean_v4)/tot_mean_v4 # see change in finefire
+#g_percent_change_MIMI_v5 = (tot__mean_v5-tot_mean_v1)/tot_mean_v1 # see change in wood + resicoal + oil/indcoal + finefire
+
+# Define your custom color map
+color1 = '#3E5DC6'
+color2 = '#5B99E6'
+color3 = '#f7e2bf'
+color4 = '#cc9f3e'
+color5 = '#c4532f'
+positions = [0.0, 0.25, 0.5, 0.75, 1.0]
+colors = [color1, color2, color3, color4, color5]
+custom_cmap = LinearSegmentedColormap.from_list('custom_cmap', list(zip(positions, colors)))
+
+# Define vmin and vmax for the color map
+vmin = -1.5
+vmax = 1.5
+
+# Create a function to plot each figure
+def plot_figure(data, title):
+    fig = plt.figure(figsize=(10, 8), edgecolor='w')
+    ax = fig.add_subplot(1, 1, 1, projection=ccrs.Robinson())
+
+    # Set the central latitude and longitude
+    ax.set_global()
+
+    # Set face color and add features
+    ax.set_facecolor('white')
+    ax.coastlines(resolution='110m', color='black')
+    ax.gridlines(draw_labels=True, linewidth=0.5, color='black', alpha=0.5)
+
+    # Plot the data
+    lon, lat = np.meshgrid(all_long_options, all_lat_options)
+    plot = ax.pcolormesh(lon, lat, data, cmap=custom_cmap, vmin=vmin, vmax=vmax, transform=ccrs.PlateCarree())
+
+    # Add a colorbar
+    plt.colorbar(plot, ax=ax, orientation='horizontal', pad=0.05, aspect=50)
+
+    # Set title
+    ax.set_title(title)
+
+    # Display the figure
+    plt.show()
+
+# Plot each figure
+plot_figure(a_percent_change_MIMI_v2, "a_percent_change_MIMI_v2")
+plot_figure(b_percent_change_v2_v3, "b_percent_change_v2_v3")
+plot_figure(c_percent_change_MIMI_v3, "c_percent_change_MIMI_v3")
+plot_figure(d_percent_change_v3_v4, "d_percent_change_v3_v4")
+plot_figure(e_percent_change_MIMI_v4, "e_percent_change_MIMI_v4")
+#plot_figure(f_percent_change_v4_v5, "f_percent_change_v4_v5")
+#plot_figure(g_percent_change_MIMI_v5, "g_percent_change_MIMI_v5")
